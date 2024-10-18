@@ -7,6 +7,7 @@
 
 import Foundation
 import HomeControlClient
+import HomeControlKit
 import UIKit
 import UserNotifications
 
@@ -14,8 +15,7 @@ class AppDelegate: NSObject {
     private(set) var homeControlClient: HomeControlClient
 
     override init() {
-        homeControlClient = .init(address: "192.168.178.90", port: 8080)!
-        homeControlClient.authToken = Environment.require("AUTH_TOKEN")
+        homeControlClient = .usingLocalIPAddress
     }
 
     private func requestRemoteNotificationsIfNeeded() {
@@ -26,6 +26,14 @@ class AppDelegate: NSObject {
                 }
             }
         }
+    }
+}
+
+extension HomeControlClient {
+    static var usingLocalIPAddress: Self {
+        var client = HomeControlClient(address: "192.168.178.90", port: 8080)!
+        client.authToken = Environment.require("AUTH_TOKEN")
+        return client
     }
 }
 
@@ -45,6 +53,12 @@ extension AppDelegate: UIApplicationDelegate {
         Task.detached {
             do {
                 try await self.homeControlClient.pushDevice.register(pushDevice: .init(deviceToken: tokenString))
+
+                try await self.homeControlClient.pushDevice.updateSettings(
+                    deviceToken: tokenString,
+                    messageType: .adapterSungrowInverter,
+                    settings: .init(isEnabled: true)
+                )
             } catch {
                 print("Failed to register device \(error)")
             }
