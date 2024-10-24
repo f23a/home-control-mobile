@@ -1,0 +1,24 @@
+{
+  "originHash" : "18169cd8b5913d5d158215e5b7d5eaa6080968dccbbdc656eb048d056832b7d4",
+  "pins" : [
+    {
+      "identity" : "home-control-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/f23a/home-control-kit.git",
+      "state" : {
+        "revision" : "d31871192a52c83a0cd1e4f37b4ba0593fd3fe23",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "tibberswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ppeelen/TibberSwift.git",
+      "state" : {
+        "revision" : "c76d36ac0b9e4dc00dde751f5a47d1466d25fa52",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

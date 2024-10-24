@@ -7,26 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6443379D2CC5847B005D32A3 /* HomeControlWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 644337902CC5847A005D32A3 /* HomeControlWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6446C2142CC8EC33006C4E8A /* TibberSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6446C2132CC8EC33006C4E8A /* TibberSwift */; };
 		646D3B972CA7346D008B8C78 /* HomeControlClient in Frameworks */ = {isa = PBXBuildFile; productRef = 646D3B962CA7346D008B8C78 /* HomeControlClient */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6443379B2CC5847B005D32A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 646D3B732CA7343C008B8C78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6443378F2CC5847A005D32A3;
+			remoteInfo = "HomeControlWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6443376B2CC2E9E0005D32A3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6443379D2CC5847B005D32A3 /* HomeControlWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		646D3B7B2CA7343C008B8C78 /* Home Control Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Control Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		644337902CC5847A005D32A3 /* HomeControlWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControlWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		646D3B7B2CA7343C008B8C78 /* HomeControlMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControlMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		646D3B7D2CA7343C008B8C78 /* Home Control Mobile */ = {
+		644337912CC5847A005D32A3 /* HomeControlWatch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Home Control Mobile";
+			path = HomeControlWatch;
+			sourceTree = "<group>";
+		};
+		646D3B7D2CA7343C008B8C78 /* HomeControlMobile */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HomeControlMobile;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6443378D2CC5847A005D32A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		646D3B782CA7343C008B8C78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6446C2142CC8EC33006C4E8A /* TibberSwift in Frameworks */,
 				646D3B972CA7346D008B8C78 /* HomeControlClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,10 +74,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6446C2122CC8EC33006C4E8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		646D3B722CA7343C008B8C78 = {
 			isa = PBXGroup;
 			children = (
-				646D3B7D2CA7343C008B8C78 /* Home Control Mobile */,
+				646D3B7D2CA7343C008B8C78 /* HomeControlMobile */,
+				644337912CC5847A005D32A3 /* HomeControlWatch */,
+				6446C2122CC8EC33006C4E8A /* Frameworks */,
 				646D3B7C2CA7343C008B8C78 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,7 +94,8 @@
 		646D3B7C2CA7343C008B8C78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				646D3B7B2CA7343C008B8C78 /* Home Control Mobile.app */,
+				646D3B7B2CA7343C008B8C78 /* HomeControlMobile.app */,
+				644337902CC5847A005D32A3 /* HomeControlWatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,28 +103,53 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		646D3B7A2CA7343C008B8C78 /* Home Control Mobile */ = {
+		6443378F2CC5847A005D32A3 /* HomeControlWatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 646D3B892CA7343D008B8C78 /* Build configuration list for PBXNativeTarget "Home Control Mobile" */;
+			buildConfigurationList = 6443379E2CC5847B005D32A3 /* Build configuration list for PBXNativeTarget "HomeControlWatch" */;
 			buildPhases = (
-				646D3BAE2CA7E2A6008B8C78 /* Swift Lint */,
-				646D3B772CA7343C008B8C78 /* Sources */,
-				646D3B782CA7343C008B8C78 /* Frameworks */,
-				646D3B792CA7343C008B8C78 /* Resources */,
+				6443378C2CC5847A005D32A3 /* Sources */,
+				6443378D2CC5847A005D32A3 /* Frameworks */,
+				6443378E2CC5847A005D32A3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				646D3B7D2CA7343C008B8C78 /* Home Control Mobile */,
+				644337912CC5847A005D32A3 /* HomeControlWatch */,
 			);
-			name = "Home Control Mobile";
+			name = HomeControlWatch;
+			packageProductDependencies = (
+			);
+			productName = "HomeControlWatch Watch App";
+			productReference = 644337902CC5847A005D32A3 /* HomeControlWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		646D3B7A2CA7343C008B8C78 /* HomeControlMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646D3B892CA7343D008B8C78 /* Build configuration list for PBXNativeTarget "HomeControlMobile" */;
+			buildPhases = (
+				646D3BAE2CA7E2A6008B8C78 /* Swift Lint */,
+				646D3B772CA7343C008B8C78 /* Sources */,
+				646D3B782CA7343C008B8C78 /* Frameworks */,
+				646D3B792CA7343C008B8C78 /* Resources */,
+				6443376B2CC2E9E0005D32A3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6443379C2CC5847B005D32A3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				646D3B7D2CA7343C008B8C78 /* HomeControlMobile */,
+			);
+			name = HomeControlMobile;
 			packageProductDependencies = (
 				646D3B962CA7346D008B8C78 /* HomeControlClient */,
+				6446C2132CC8EC33006C4E8A /* TibberSwift */,
 			);
 			productName = "Home Control Mobile";
-			productReference = 646D3B7B2CA7343C008B8C78 /* Home Control Mobile.app */;
+			productReference = 646D3B7B2CA7343C008B8C78 /* HomeControlMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -87,12 +162,15 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					6443378F2CC5847A005D32A3 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					646D3B7A2CA7343C008B8C78 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 646D3B762CA7343C008B8C78 /* Build configuration list for PBXProject "Home Control Mobile" */;
+			buildConfigurationList = 646D3B762CA7343C008B8C78 /* Build configuration list for PBXProject "HomeControlMobile" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -103,18 +181,27 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				646D3B952CA7346D008B8C78 /* XCLocalSwiftPackageReference "../home-control-client" */,
+				647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 646D3B7C2CA7343C008B8C78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				646D3B7A2CA7343C008B8C78 /* Home Control Mobile */,
+				646D3B7A2CA7343C008B8C78 /* HomeControlMobile */,
+				6443378F2CC5847A005D32A3 /* HomeControlWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6443378E2CC5847A005D32A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		646D3B792CA7343C008B8C78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +234,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6443378C2CC5847A005D32A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		646D3B772CA7343C008B8C78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,7 +250,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6443379C2CC5847B005D32A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6443378F2CC5847A005D32A3 /* HomeControlWatch */;
+			targetProxy = 6443379B2CC5847B005D32A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6443379F2CC5847B005D32A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HomeControlWatch/Preview Content\"";
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HomeControlWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "de.pageler.christoph.home-control.mobile";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.pageler.christoph.home-control.mobile.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		644337A02CC5847B005D32A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HomeControlWatch/Preview Content\"";
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HomeControlWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "de.pageler.christoph.home-control.mobile";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.pageler.christoph.home-control.mobile.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 		646D3B872CA7343D008B8C78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -281,10 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Home Control Mobile/Home Control Mobile.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HomeControlMobile/HomeControlMobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Home Control Mobile/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HomeControlMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = 488D924Q6G;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -313,10 +475,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Home Control Mobile/Home Control Mobile.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HomeControlMobile/HomeControlMobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Home Control Mobile/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HomeControlMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = 488D924Q6G;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -343,7 +505,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		646D3B762CA7343C008B8C78 /* Build configuration list for PBXProject "Home Control Mobile" */ = {
+		6443379E2CC5847B005D32A3 /* Build configuration list for PBXNativeTarget "HomeControlWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6443379F2CC5847B005D32A3 /* Debug */,
+				644337A02CC5847B005D32A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		646D3B762CA7343C008B8C78 /* Build configuration list for PBXProject "HomeControlMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				646D3B872CA7343D008B8C78 /* Debug */,
@@ -352,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		646D3B892CA7343D008B8C78 /* Build configuration list for PBXNativeTarget "Home Control Mobile" */ = {
+		646D3B892CA7343D008B8C78 /* Build configuration list for PBXNativeTarget "HomeControlMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				646D3B8A2CA7343D008B8C78 /* Debug */,
@@ -370,7 +541,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ppeelen/TibberSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		6446C2132CC8EC33006C4E8A /* TibberSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */;
+			productName = TibberSwift;
+		};
 		646D3B962CA7346D008B8C78 /* HomeControlClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeControlClient;
