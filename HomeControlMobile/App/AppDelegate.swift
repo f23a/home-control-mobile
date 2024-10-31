@@ -11,11 +11,19 @@ import HomeControlKit
 import UIKit
 import UserNotifications
 
+@MainActor
 class AppDelegate: NSObject {
+    private(set) var appState = AppState()
     private(set) var homeControlClient: HomeControlClient
+    private var homeControlWebSocket: HomeControlWebSocket
 
     override init() {
-        homeControlClient = .usingLocalIPAddress
+        let client = HomeControlClient.usingLocalIPAddress
+        homeControlClient = client
+        homeControlWebSocket = .init(client: client)
+        super.init()
+
+        homeControlWebSocket.delegate = self
     }
 
     private func requestRemoteNotificationsIfNeeded() {
@@ -59,5 +67,21 @@ extension AppDelegate: UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Error) {
         print("Failed to register")
+    }
+}
+
+extension AppDelegate: @preconcurrency HomeControlWebSocketDelegate {
+    func homeControlWebSocket(
+        _ homeControlWebSocket: HomeControlWebSocket,
+        didCreateInverterReading inverterReading: Stored<InverterReading>
+    ) {
+        appState.latestInverterReading = inverterReading
+    }
+
+    func homeControlWebSocket(
+        _ homeControlWebSocket: HomeControlWebSocket,
+        didSaveSetting setting: HomeControlKit.Setting
+    ) {
+
     }
 }

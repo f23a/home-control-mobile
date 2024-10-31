@@ -11,6 +11,8 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeTabView()
+            DevicesTabView()
+            HistoryTabView()
             ForceChargingTabView()
             SettingsTabView()
         }

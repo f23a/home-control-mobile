@@ -14,6 +14,7 @@ struct HomeControlMobileApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(appDelegate.appState)
         }
     }
 }
