@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641393812CDAB0B200D21ECE /* HomeControlShared in Frameworks */ = {isa = PBXBuildFile; productRef = 641393802CDAB0B200D21ECE /* HomeControlShared */; };
 		6443379D2CC5847B005D32A3 /* HomeControlWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 644337902CC5847A005D32A3 /* HomeControlWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6446C2142CC8EC33006C4E8A /* TibberSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6446C2132CC8EC33006C4E8A /* TibberSwift */; };
-		646D3B972CA7346D008B8C78 /* HomeControlClient in Frameworks */ = {isa = PBXBuildFile; productRef = 646D3B962CA7346D008B8C78 /* HomeControlClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6446C2142CC8EC33006C4E8A /* TibberSwift in Frameworks */,
-				646D3B972CA7346D008B8C78 /* HomeControlClient in Frameworks */,
+				641393812CDAB0B200D21ECE /* HomeControlShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +143,7 @@
 			);
 			name = HomeControlMobile;
 			packageProductDependencies = (
-				646D3B962CA7346D008B8C78 /* HomeControlClient */,
-				6446C2132CC8EC33006C4E8A /* TibberSwift */,
+				641393802CDAB0B200D21ECE /* HomeControlShared */,
 			);
 			productName = "Home Control Mobile";
 			productReference = 646D3B7B2CA7343C008B8C78 /* HomeControlMobile.app */;
@@ -180,8 +177,7 @@
 			mainGroup = 646D3B722CA7343C008B8C78;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				646D3B952CA7346D008B8C78 /* XCLocalSwiftPackageReference "../home-control-client" */,
-				647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */,
+				6413937F2CDAB0B200D21ECE /* XCLocalSwiftPackageReference "HomeControlShared" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 646D3B7C2CA7343C008B8C78 /* Products */;
@@ -535,32 +531,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		646D3B952CA7346D008B8C78 /* XCLocalSwiftPackageReference "../home-control-client" */ = {
+		6413937F2CDAB0B200D21ECE /* XCLocalSwiftPackageReference "HomeControlShared" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "../home-control-client";
+			relativePath = HomeControlShared;
 		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ppeelen/TibberSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		6446C2132CC8EC33006C4E8A /* TibberSwift */ = {
+		641393802CDAB0B200D21ECE /* HomeControlShared */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 647C19052CC8EBBD00FC81DD /* XCRemoteSwiftPackageReference "TibberSwift" */;
-			productName = TibberSwift;
-		};
-		646D3B962CA7346D008B8C78 /* HomeControlClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HomeControlClient;
+			productName = HomeControlShared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,9 +7,14 @@
 
 import HomeControlClient
 import HomeControlKit
+import HomeControlLogging
+import Logging
 import SwiftUI
 
 struct ForceChargingTabView: View {
+    private let logger = Logger(homeControl: "mobile.force-charging-tab-view")
+    @Environment(AppState.self) var appState
+
     @State private var forceChargingRanges: [Stored<ForceChargingRange>]?
     @State private var sheet: SheetType?
 
@@ -90,7 +95,7 @@ struct ForceChargingTabView: View {
     }
 
     private func updateForceChargingRanges() async {
-        forceChargingRanges = try? await HomeControlClient.usingLocalIPAddress.forceChargingRanges.index()
+        forceChargingRanges = try? await appState.homeControlClient.forceChargingRanges.index()
     }
 
     private func onDelete(at offsets: IndexSet) {
@@ -99,9 +104,9 @@ struct ForceChargingTabView: View {
 
         Task {
             do {
-                try await HomeControlClient.usingLocalIPAddress.forceChargingRanges.delete(id: forceChargingRange.id)
+                try await appState.homeControlClient.forceChargingRanges.delete(id: forceChargingRange.id)
             } catch {
-                print("Failed to delete")
+                logger.critical("Failed to delete \(error)")
             }
             await updateForceChargingRanges()
         }

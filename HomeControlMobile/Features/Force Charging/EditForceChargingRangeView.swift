@@ -7,10 +7,14 @@
 
 import HomeControlClient
 import HomeControlKit
+import HomeControlLogging
 import SwiftUI
+import Logging
 
 struct EditForceChargingRangeView: View {
-    @SwiftUI.Environment(\.dismiss) var dismiss
+    private let logger = Logger(homeControl: "mobile.edit-force-charging-range-view")
+    @Environment(AppState.self) var appState
+    @Environment(\.dismiss) var dismiss
 
     let id: UUID?
     @State var forceChargingRange: ForceChargingRange
@@ -53,7 +57,7 @@ struct EditForceChargingRangeView: View {
     }
 
     private func save() async {
-        let client = HomeControlClient.usingLocalIPAddress
+        let client = appState.homeControlClient
         do {
             let storedForceChargingRange: Stored<ForceChargingRange>
             if let id {
@@ -62,11 +66,11 @@ struct EditForceChargingRangeView: View {
                 storedForceChargingRange = try await client.forceChargingRanges.create(forceChargingRange)
             }
 
-            print("Stored force charging range \(storedForceChargingRange.id)")
+            logger.info("Stored force charging range \(storedForceChargingRange.id)")
 
             dismiss()
         } catch {
-
+            logger.critical("Failed to save force charging range: \(error)")
         }
     }
 }

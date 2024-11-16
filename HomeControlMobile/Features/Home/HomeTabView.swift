@@ -7,7 +7,6 @@
 
 import HomeControlKit
 import SwiftUI
-// import TibberSwift
 
 struct HomeTabView: View {
     @Environment(AppState.self) var appState
@@ -42,12 +41,5 @@ struct HomeTabView: View {
             .navigationTitle("Home")
         }
         .tabItem { Label("Home", systemImage: "house") }
-//            .task { await tibber() }
     }
-
-//    private func tibber() async {
-//        let tibber = TibberSwift(apiKey: HomeControlKit.Environment.require("TIBBER_API_KEY"))
-//        let homes = try? await tibber.customOperation(.homesWithCurrentSubscriptionAndPricingInfo())
-//        print("Homes: \(homes)")
-//    }
 }
