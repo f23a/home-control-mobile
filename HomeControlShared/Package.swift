@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
 //        .package(path: "../../home-control-client"),
-        .package(url: "https://github.com/f23a/home-control-client.git", from: "1.6.0"),
+        .package(url: "https://github.com/f23a/home-control-client.git", from: "1.7.0"),
         .package(url: "https://github.com/f23a/home-control-logging.git", from: "1.0.0")
     ],
     targets: [
