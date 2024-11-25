@@ -40,14 +40,37 @@
 		646D3B7B2CA7343C008B8C78 /* HomeControlMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControlMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6432D9642CF4B0F1007D68FF /* Exceptions for "HomeControlWatch" folder in "HomeControlWatch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6443378F2CC5847A005D32A3 /* HomeControlWatch */;
+		};
+		6432D9662CF4B10B007D68FF /* Exceptions for "HomeControlMobile" folder in "HomeControlMobile" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 646D3B7A2CA7343C008B8C78 /* HomeControlMobile */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		644337912CC5847A005D32A3 /* HomeControlWatch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6432D9642CF4B0F1007D68FF /* Exceptions for "HomeControlWatch" folder in "HomeControlWatch" target */,
+			);
 			path = HomeControlWatch;
 			sourceTree = "<group>";
 		};
 		646D3B7D2CA7343C008B8C78 /* HomeControlMobile */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6432D9662CF4B10B007D68FF /* Exceptions for "HomeControlMobile" folder in "HomeControlMobile" target */,
+			);
 			path = HomeControlMobile;
 			sourceTree = "<group>";
 		};
@@ -266,6 +289,7 @@
 				DEVELOPMENT_TEAM = 488D924Q6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeControlWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HomeControlWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "de.pageler.christoph.home-control.mobile";
@@ -296,6 +320,7 @@
 				DEVELOPMENT_TEAM = 488D924Q6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeControlWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HomeControlWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "de.pageler.christoph.home-control.mobile";
@@ -447,6 +472,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeControlMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Home Control";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,6 +505,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeControlMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Home Control";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
