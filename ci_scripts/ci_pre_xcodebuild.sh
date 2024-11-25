@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo $ENVJSON > HomeControlMobile/.env.json
+echo $ENVJSON > "$CI_WORKSPACE_PATH/HomeControlMobile/.env.json"
