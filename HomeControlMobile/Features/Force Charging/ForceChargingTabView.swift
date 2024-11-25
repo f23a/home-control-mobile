@@ -95,7 +95,16 @@ struct ForceChargingTabView: View {
     }
 
     private func updateForceChargingRanges() async {
-        forceChargingRanges = try? await appState.homeControlClient.forceChargingRanges.index()
+        do {
+            let query = ForceChargingRangeQuery(
+                pagination: .init(page: 1, per: 1000),
+                filter: [],
+                sort: .init(value: .startsAt, direction: .descending)
+            )
+            forceChargingRanges = try await appState.homeControlClient.forceChargingRanges.query(query).items
+        } catch {
+            logger.critical("Failed to get force charging ranges \(error)")
+        }
     }
 
     private func onDelete(at offsets: IndexSet) {

@@ -31,6 +31,7 @@ import SwiftUI
     }
 
     func changeEndpoint(to endpoint: Endpoint) {
+        self.endpoint = endpoint
         Settings.endpoint = endpoint
         Settings.synchronize()
 
