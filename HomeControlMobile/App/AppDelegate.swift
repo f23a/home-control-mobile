@@ -13,6 +13,7 @@ import Logging
 import UIKit
 import UserNotifications
 
+
 @MainActor
 class AppDelegate: NSObject {
     private let logger = Logger(homeControl: "mobile.app-delegate")
