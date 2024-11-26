@@ -33,21 +33,20 @@ struct PushNotificationSettingsView: View {
 
             if isPushEnabled {
                 Section("Inverter Force Charging") {
-                    show settings
-                    Toggle("Enabled", isOn: .constant(false))
-                    Toggle("Disabled", isOn: .constant(false))
+                    toggleView(title: "Enabled", messageType: .inverterForceChargingEnabled)
+                    toggleView(title: "Disabled", messageType: .inverterForceChargingDisabled)
                 }
 
                 Section("Electricity Prices") {
-                    Toggle("Updated", isOn: .constant(false))
+                    toggleView(title: "Updated", messageType: .electricityPricesUpdated)
                 }
 
                 Section("Charge Finder") {
-                    Toggle("Force Charging Ranges Created", isOn: .constant(false))
+                    toggleView(title: "Force Charging Ranges Created", messageType: .chargeFinderCreatedForceChargingRanges)
                 }
 
                 Section("Wallbox Ecomatic") {
-                    Toggle("Did Update Logic Mode", isOn: .constant(false))
+                    toggleView(title: "Did Update Logic Mode", messageType: .wallboxEcomaticDidUpdateLogicMode)
                 }
             }
         }
@@ -92,7 +91,7 @@ struct PushNotificationSettingsView: View {
                         deviceToken: token,
                         messageType: messageType
                     )
-                    newSettings[messageType] = settings
+                    newSettings[messageType] = settings.value
                 } catch {
                     logger.critical("Failed to get push device settings for \(messageType) \(error)")
                 }
@@ -101,6 +100,42 @@ struct PushNotificationSettingsView: View {
                 self.messageTypeSettings = newSettings
             }
         }
+    }
+
+    private func sendSettings(messageType: MessageType, settings: PushDeviceMessageTypeSettings) {
+        guard let token = appState.pushDeviceToken else { return }
+
+        Task {
+            do {
+                try await appState.homeControlClient.pushDevice.updateSettings(
+                    deviceToken: token,
+                    messageType: messageType,
+                    settings: settings
+                )
+            } catch {
+                logger.critical("Failed to update push device settings: \(error)")
+                updateSettings()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func toggleView(title: String, messageType: MessageType) -> some View {
+        Toggle(
+            isOn: .init(
+                get: { messageTypeSettings[messageType]?.isEnabled ?? false },
+                set: { enabled in
+                    var settings = messageTypeSettings[messageType] ?? .init(isEnabled: false)
+                    settings.isEnabled = enabled
+                    messageTypeSettings[messageType] = settings
+
+                    sendSettings(messageType: messageType, settings: settings)
+                }
+            ),
+            label: {
+                Text(title)
+            }
+        )
     }
 }
 
