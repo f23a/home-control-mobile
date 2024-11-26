@@ -21,13 +21,20 @@ import SwiftUI
 
     var latestInverterReading: Stored<InverterReading>?
 
-    init() {
-        LoggingSystem.bootstrapHomeControl()
+    private(set) var isPushEnabled = false
+    private(set) var pushDeviceToken: String?
 
-        endpoint = Settings.endpoint ?? .production
+    init(defaultEndpoint: Endpoint = .production) {
+        endpoint = Settings.endpoint ?? defaultEndpoint
         homeControlClient = HomeControlClient.production
 
         updateHomeControlClientCatch()
+
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
     }
 
     func changeEndpoint(to endpoint: Endpoint) {
@@ -71,6 +78,40 @@ import SwiftUI
 
     enum Error: Swift.Error {
         case failedToInitClient
+    }
+
+    func requestRemoteNotificationsIfNeeded() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+
+    func unregisterForRemoteNotifications() {
+        UIApplication.shared.unregisterForRemoteNotifications()
+        pushDeviceToken = nil
+        isPushEnabled = false
+    }
+
+    func updatePushDeviceToken(_ deviceToken: String) {
+        DispatchQueue.main.async {
+            self.pushDeviceToken = deviceToken
+            self.isPushEnabled = true
+        }
+        Task {
+            do {
+                try await homeControlClient.pushDevice.register(pushDevice: .init(deviceToken: deviceToken))
+            } catch {
+                logger.critical("Failed to register push device \(error)")
+                DispatchQueue.main.async {
+                    self.isPushEnabled = false
+                }
+            }
+        }
+
     }
 }
 

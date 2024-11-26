@@ -5,6 +5,7 @@
 //  Created by Christoph Pageler on 24.09.24.
 //
 
+// swiftlint:disable comment_spacing
 //import AppIntents
 //import HomeControlClient
 //import HomeControlKit

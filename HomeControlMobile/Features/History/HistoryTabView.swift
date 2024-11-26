@@ -6,9 +6,13 @@
 //
 
 import Charts
+import HomeControlKit
+import Logging
 import SwiftUI
 
 struct HistoryTabView: View {
+    private let logger = Logger(homeControl: "mobile.history-tab-view")
+
     enum DateSpan {
         case day
         case week
@@ -57,7 +61,7 @@ struct HistoryTabView: View {
                     .valueAligned(unit: 30, majorAlignment: .page)
                 )
                 .onChange(of: scrollPosition) {
-                    print("Scroll \(scrollPosition)")
+                    logger.info("Scroll \(scrollPosition)")
                 }
             }
             .navigationTitle("History")

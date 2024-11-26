@@ -8,8 +8,8 @@
 import HomeControlClient
 import HomeControlKit
 import HomeControlLogging
-import SwiftUI
 import Logging
+import SwiftUI
 
 struct EditForceChargingRangeView: View {
     private let logger = Logger(homeControl: "mobile.edit-force-charging-range-view")

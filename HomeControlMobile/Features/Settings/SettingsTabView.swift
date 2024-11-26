@@ -16,7 +16,10 @@ struct SettingsTabView: View {
             List {
                 Section("General") {
                     endpointPickerView
-                    NavigationLink("Push Notifications", destination: Text(""))
+                    NavigationLink(
+                        "Push Notifications",
+                        destination: PushNotificationSettingsView()
+                    )
                 }
                 Section("Remote") {
                     NavigationLink("Adapter Sungrow Converter", destination: Text(""))
@@ -50,5 +53,5 @@ struct SettingsTabView: View {
     TabView {
         SettingsTabView()
     }
-    .environment(AppState())
+    .environment(AppState(defaultEndpoint: .localIPAddressMacBook))
 }
