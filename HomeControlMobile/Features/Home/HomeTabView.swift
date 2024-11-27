@@ -24,6 +24,7 @@ struct HomeTabView: View {
                         Text("Battery: \(latestInverterReading.value.formatted(\.fromBattery))")
                     }
                     Section("To") {
+                        Text("Load: \(latestInverterReading.value.formatted(\.toLoad))")
                         Text("Grid: \(latestInverterReading.value.formatted(\.toGrid))")
                         Text("Battery: \(latestInverterReading.value.formatted(\.toBattery))")
                     }
