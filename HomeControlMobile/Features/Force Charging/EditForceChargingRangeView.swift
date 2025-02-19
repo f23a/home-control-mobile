@@ -45,6 +45,7 @@ struct EditForceChargingRangeView: View {
                 Text("User").tag(ForceChargingRangeSource.user)
                 Text("Automatic").tag(ForceChargingRangeSource.automatic)
             }
+            Toggle("Is Vehicle Charging Allowed", isOn: $forceChargingRange.isVehicleChargingAllowed)
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -85,9 +86,11 @@ struct EditForceChargingRangeView: View {
                     endsAt: Date(),
                     targetStateOfCharge: 1,
                     state: .planned,
-                    source: .user
+                    source: .user,
+                    isVehicleChargingAllowed: true
                 )
             )
         }
     }
+    .environment(AppState())
 }

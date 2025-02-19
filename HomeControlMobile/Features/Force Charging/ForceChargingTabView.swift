@@ -39,6 +39,11 @@ struct ForceChargingTabView: View {
                                     Text("\(forceChargingRange.value.state)")
                                     Spacer()
                                     Text("\(forceChargingRange.value.source)")
+                                    if forceChargingRange.value.isVehicleChargingAllowed {
+                                        Image(systemName: "bolt.car")
+                                    } else {
+                                        Image(systemName: "car")
+                                    }
                                 }
                                 .foregroundStyle(.secondary)
                                 .font(.callout)
@@ -70,13 +75,7 @@ struct ForceChargingTabView: View {
                         NavigationStack {
                             EditForceChargingRangeView(
                                 id: nil,
-                                forceChargingRange: .init(
-                                    startsAt: Date(),
-                                    endsAt: Date(),
-                                    targetStateOfCharge: 1,
-                                    state: .planned,
-                                    source: .user
-                                )
+                                forceChargingRange: .initialValue
                             )
                         }
                     case let .edit(forceChargingRange):
@@ -140,4 +139,5 @@ struct ForceChargingTabView: View {
     TabView {
         ForceChargingTabView()
     }
+    .environment(AppState())
 }

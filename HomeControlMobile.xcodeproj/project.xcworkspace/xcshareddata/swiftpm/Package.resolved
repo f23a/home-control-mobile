@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/f23a/home-control-client.git",
       "state" : {
-        "revision" : "dae533c2f1a1d9e276b0c5563dafa64d16ab70b6",
-        "version" : "1.7.2"
+        "revision" : "aa93acc494eeac45aa035c82fd80a1765f1c0e3e",
+        "version" : "1.7.3"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/f23a/home-control-kit.git",
       "state" : {
-        "revision" : "bc203e6966942c3ab16912df9fb6f417cc11acca",
-        "version" : "1.8.3"
+        "revision" : "5dcbf8c03297d2fdfc2b484313b27800f64cd114",
+        "version" : "1.8.4"
       }
     },
     {
