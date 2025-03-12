@@ -23,9 +23,11 @@ struct SettingsTabView: View {
                 }
                 Section("Remote") {
                     NavigationLink("Adapter Sungrow Converter", destination: Text(""))
+                        .disabled(true)
                     NavigationLink("Force Charging", destination: Text(""))
+                        .disabled(true)
+                    NavigationLink("Charge Finder", destination: ChargeFinderSettingsView())
                 }
-
             }
             .navigationTitle("Settings")
         }

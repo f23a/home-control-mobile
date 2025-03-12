@@ -42,7 +42,10 @@ struct PushNotificationSettingsView: View {
                 }
 
                 Section("Charge Finder") {
-                    toggleView(title: "Force Charging Ranges Created", messageType: .chargeFinderCreatedForceChargingRanges)
+                    toggleView(
+                        title: "Force Charging Ranges Created",
+                        messageType: .chargeFinderCreatedForceChargingRanges
+                    )
                 }
 
                 Section("Wallbox Ecomatic") {
